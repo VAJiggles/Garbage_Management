@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+    {% load fontawesome %}
+	<head>
+		<title>TERRA</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/jquery.dropotron.min.js"></script>
+		<script src="/static/js/skel.min.js"></script>
+		<script src="/static/js/skel-layers.min.js"></script>
+		<script src="/static/js/init.js"></script>
+		{% fontawesome_stylesheet %}
+		<link rel="stylesheet" href="/static/css/skel.css" />
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<style>
+			::placeholder 
+			{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+   				color: white;
+    			opacity: 1; /* Firefox */
+			}
+		</style>
+	</head>
+
+	<script>
+    function myAlert() {
+         var data = "{{ diction.result }}";
+         alert( data );
+    }
+	</script>
+
+	<body class="homepage">
+
+		<!-- Header Wrapper -->
+			<div class="wrapper style1">
+			
+			<!-- Header -->
+				<div id="header">
+					<div class="container">
+							
+						<!-- Logo -->
+							<h1><a href="home" id="logo">TERRA</a></h1>
+						
+						<!-- Nav -->
+							<nav id="nav">
+                                <ul>
+                                    <li class="active"><a href="home">Home</a></li>
+                                    <li>
+                                        <a href="#">User</a>
+                                        <ul>
+                                            <li><a href="signup_user">Sign-Up</a></li>
+                                            <li><a href="login_user">Login</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Driver</a>
+                                        <ul>
+                                            <li><a href="signup_driver">Sign-Up</a></li>
+                                            <li><a href="#">Login</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Admin</a>
+                                        <ul>
+                                            <li><a href="adlog">Login</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+	
+					</div>
+				</div>
+			
+				<div class="wrapper style2">
+				<section  class="container">
+					<section>
+							<h3>Enter your details</h3>
+							<form method="post" action="validate_driver"  accept="image/png , image/jpeg , image/jpg" enctype="multipart/form-data">
+								<div class="row uniform 50%">
+									<div style="width: 65%; float: left"> 
+										<h6>Basic Information</h6>
+										<input type="text" name="name" id="name" value="" placeholder="Name" style="border:1px solid #ffffff; height: 35px; display: block;" required />
+										<br>
+										<input type="text" name="address" id="address" value="" placeholder="Address" style="border:1px solid #ffffff; height: 35px; display: block;" required />
+										<br>
+										<input type="text" name="dayDob" id="day" value="" placeholder="Day" style="border:1px solid #ffffff; height: 35px; width: 10%" required /> 
+										<input type="text" name="monthDob" id="month" value="" placeholder="Month" style="border:1px solid #ffffff; height: 35px; width: 13%; margin-left: 10px" required />
+										<input type="text" name="yearDob" id="year" value="" placeholder="Year" style="border:1px solid #ffffff; height: 35px; width: 10%; margin-left: 10px" required />
+										<br>
+										<br>
+										<h6>Contact Information</h6>
+										<input type="email" name="email" id="email" value="" placeholder="Email" style="border:1px solid #ffffff; height: 35px; display: block;" required />
+										<br>
+										<input type="number" name="phno" id="phno" value="" placeholder="Phone Number" style="border:1px solid #ffffff; height: 35px; display: block;" required  />
+										<br>
+										<h6>License Information</h6>
+										<input type="text" name="vehno" id="vehno" value="" placeholder="Vehicle Number" style="border:1px solid #ffffff; height: 35px; display: block;" required />
+										<br>
+										<input type="text" name="licno" id="licno" value="" placeholder="License Number" style="border:1px solid #ffffff; height: 35px; display: block;" required />
+										<br>
+										<h6 style="font-size: 15px; text-transform: none;">Date of Expiry</h6>
+										<input type="text" name="dayLic" id="day" value="" placeholder="Day" style="border:1px solid #ffffff; height: 35px; width: 10%" required /> 
+										<input type="text" name="monthLic" id="month" value="" placeholder="Month" style="border:1px solid #ffffff; height: 35px; width: 13%; margin-left: 10px" required />
+										<input type="text" name="yearLic" id="year" value="" placeholder="Year" style="border:1px solid #ffffff; height: 35px; width: 10%; margin-left: 10px" required />
+										<br>
+										<br>
+										<h6 style="font-size: 15px; text-transform: none;">License Photograph</h6>
+										<input type="file" name="licenseimage" accept="image" required style="color: #ffffff">
+										<br>
+										<br>
+										<h6>Profile Information</h6>
+										<input type="text" name="username" id="uname" value="" placeholder="Username" style="border:1px solid #ffffff; height: 35px; display: block;" required />
+										<br>
+										<input type="password" name="pwrd" id="password" value="" placeholder="Password" style="border:1px solid #ffffff; height: 35px; display: block;" required  />
+										<br>
+										<input type="password" name="pwrd2" id="password2" value="" placeholder="Re-type Password" style="border:1px solid #ffffff; height: 35px; display: block;" required  />
+										<br>
+										<h6 style="font-size: 15px; text-transform: none;">Your Photograph (Optional) </h6>
+										<input type="file" name="profileimage" accept="image" required style="color: #ffffff">
+										<br>
+										<br>
+										<button style=" font-size: 0.8em; text-align: center; margin-left: 570px;" class="button alt">Submit</button>
+									</div>
+									<div style="width: 35%; float:right; ">
+										<div class="6u">
+											<a href="#" class="image" style="width: 69%;"><img src="/static/img/poster.jpg" style="height : 650px; margin-left: 30px; margin-top: 170px" alt=""></a>
+										</div>
+									</div>
+								</div>
+								<br>
+							</form>
+					</section>
+				</section>
+			</div>
+			 {% if diction.value == 1 %}
+        			<script>myAlert();</script>
+    		{% endif %}
+
+			<div id="footer">
+			<section class="container">
+				<header class="major">
+					<h2>Connect With us</h2>
+					<span class="byline"></span>
+				</header>
+				<ul class="icons">
+					<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
+					<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
+					<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
+					<li><a href="#" class="fa fa-google-plus"><span>Google+</span></a></li>
+				</ul>
+				<hr />
+			</section>	
+		</div>
+
+	</body>
+</html>

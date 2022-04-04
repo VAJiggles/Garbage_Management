@@ -1,0 +1,85 @@
+<!-- <html>
+<head>
+  <link rel="stylesheet" href="/static/css/mycss.css">
+<style>  
+  img{
+        margin-top: 10px;
+        margin-left: 35px;
+        height: 22%;
+    }
+</style>
+<img src="/static/img/admin.png"></img>
+<div class="sidenav">
+  <a href="/all_users" target="right_side"><p> User Details </p></a>
+  <a href="/all_drivers" target="right_side"><p> Driver Details </p></a>
+  <a href="/users_search" target="right_side"><p> User Search </p></a>
+  <a href="#about"><p> Schedule Details </p></a>
+  <a href="/drivers_search" target="right_side"><p> Driver search </p></a>
+  <a href="/adLogout" target="_blank"><p> Log Out </p></a>
+</div>
+</head>
+</html> -->
+
+<html>
+{% load fontawesome %}
+  <head>
+    <title>TERRA</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery.dropotron.min.js"></script>
+    <script src="/static/js/skel.min.js"></script>
+    <script src="/static/js/skel-layers.min.js"></script>
+    <script src="/static/js/init.js"></script>
+    {% fontawesome_stylesheet %}
+    <link rel="stylesheet" href="/static/css/skel.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <style type="text/css">
+      body{
+        background-color: black;
+        font-family: Roboto Light;
+        color: #483C46;
+      }
+      a{
+         color: #483C46; text-decoration: none; 
+      }
+      a:hover{
+        color: white;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Main -->
+      <div id="main" class="wrapper style4" style="background-color: #F4743B; font-variant-caps: all;">
+        <div class="container">
+          <div class="row">
+
+
+            <!-- Sidebar -->
+            <div id="sidebar">
+              <section sty;e>
+                <header class="major">
+                  <h2 style="font-size: 2.2em;">Welcome</h2>
+                </header>                 
+                <ul class="default" >
+                  <li><a href="/create_schedule" target="right_side" style="font-size: 1.3em;"><p> Create Schedule </p></a></li>
+                  <li><a href="/update_schedule" target="right_side" style="font-size: 1.3em;"><p> Update Schedule </p></a></li>
+                  <li><a href="/view_schedule" target="right_side" style="font-size: 1.3em;"><p> View Schedule </p></a></li>
+                  <li><a href="/see_user_details" target="right_side" style="font-size: 1.3em;"><p> View Details </p></a></li>
+                  <li><a href="/update_details" target="right_side" style="font-size: 1.3em;"><p> Update Details </p></a></li>
+                  <li><a href="/logged_out_user" target="_top" style="font-size: 1.3em;"><p> Log Out </p></a></li>
+                </ul>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
+
+
+

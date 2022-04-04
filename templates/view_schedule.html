@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+	{% load fontawesome %}
+	<head>
+		<title>TERRA</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/jquery.dropotron.min.js"></script>
+		<script src="/static/js/skel.min.js"></script>
+		<script src="/static/js/skel-layers.min.js"></script>
+		<script src="/static/js/init.js"></script>
+		{% fontawesome_stylesheet %}
+		<link rel="stylesheet" href="/static/css/skel.css" />
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<style>
+			::placeholder 
+			{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+   				color: white;
+    			opacity: 1; /* Firefox */
+			}
+		</style>
+	</head>
+	<script>
+    function myAlert() {
+         var data = "{{ diction.result }}";
+         alert( data );
+    }
+	</script>
+	<body class="homepage">
+
+		<!-- Header Wrapper -->
+		
+			<div class="wrapper style1">
+				<div class="wrapper style2">
+				<section  class="container">
+					<section>
+							<h3>View Your Schedule: </h3>
+							<form method="post" action="show_schedule">
+										{% if diction.noOfHouses != 0 %} 
+										<h6>No of houses:</h6>
+										<input type="text" name="noh" style="border:1px solid #ffffff; height: 35px;" placeholder="{{ diction.noOfHouses }}" /><br>
+										<br>
+										{% endif %}
+										<h6>select days:</h6>
+										{% if diction.days == 7 or diction.days == 3 or diction.days == 5 or diction.days == 1 %}
+										<input type="checkbox" name="days[]" value="1" checked style="border:1px solid #ffffff; height: 35px;"/> Monday
+										{% else %}
+										<input type="checkbox" name="days[]" value="1" style="border:1px solid #ffffff; height: 35px;"/> Monday
+										{% endif %}
+										
+										{% if diction.days == 7 or diction.days == 3 or diction.days == 6 or diction.days == 2 %}
+										<input type="checkbox" name="days[]"  value="2" checked style="border:1px solid #ffffff; height: 35px;"/> Wednesday
+										{% else %}
+										<input type="checkbox" name="days[]"  value="2" style="border:1px solid #ffffff; height: 35px;"/> Wednesday
+										{% endif %}
+										
+										{% if diction.days == 7 or diction.days == 5 or diction.days == 6 or diction.days == 4%}
+										<input type="checkbox" name="days[]" value="4" checked style="border:1px solid #ffffff; height: 35px;"/> Friday <br>
+										{% else %}
+										<input type="checkbox" name="days[]" value="4" style="border:1px solid #ffffff; height: 35px;"/> Friday <br>
+										{% endif %}
+										<h6>Address is:</h6>
+										<input type="text" name="address"  style="border:1px solid #ffffff; height: 35px;" placeholder="{{ diction.address }}" />
+										<br>									
+										<br>
+										<h6>Instructions Given: </h6>
+										<input type="text" name="specialinst"  style="border:1px solid #ffffff; height: 35px;" placeholder="{{ diction.specialInst }}" />
+										<br>
+							</form>
+					</section>
+				</section>
+				</div>
+			</div>
+			 {% if diction.value == 1 %}
+        			<script>myAlert();</script>
+    		{% endif %}
+
+	</body>
+</html>

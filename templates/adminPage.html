@@ -1,0 +1,23 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/static/css/mycss.css">
+
+<script>
+    function myAlert() {
+         var data = "{{ diction.done }}";
+         alert( data );
+    }
+</script>
+<center>
+{% if diction.value == 1 %}
+  <script>myAlert()</script>
+{% endif %}
+
+{% if diction.result == "true" %}
+	<frameset cols="20%,*">
+  		<frame frameborder="0" src="sidenav" scrolling="no">
+  		<frame frameborder="0" src="adminHome" name="right_side">
+	</frameset>
+{% endif %}
+</head>
+</html>

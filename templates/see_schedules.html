@@ -1,0 +1,56 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/static/css/mycss.css">
+</head>
+ <script>
+    function myAlert() {
+         var data = "{{ diction.done }}";
+         alert( data );
+    }
+</script>
+{% if diction.value == 1 %}
+         <script>myAlert();</script>
+{% endif %}
+<body style="background-color: #e8e8e8;">
+
+{% if diction.result == "true" %}
+    {% for i,j in diction.items %}
+      {% if j.days > 0 %}
+          <div class="box">
+           	{% if j.days == 7 %}
+				<p class="title"> Days : Monday, Wednesday and Friday <p>
+			{% elif j.days == 5 %}
+				<p class="title"> Days : Monday and Friday </p>
+			{% elif j.days == 3 %}
+				<p class="title"> Days : Monday and Wednesday</p>
+			{% elif j.days == 6 %}
+				<p class="title"> Days : Wednesday and Friday</p>
+			{% elif j.days == 1 %}
+				<p class="title"> Day : Monday </p>
+			{% elif j.days == 2 %}
+				<p class="title"> Day : Wednesday</p>
+			{% elif j.days == 4 %}
+				<p class="title"> Day : Friday</p>
+			{% endif %}
+			{% if j.noOfHouses > 0 %}
+				<p class="title"> Community : Yes </p>
+				<p class="title"> Number of Houses : {{ j.noOfHouses }}</p>
+			{% endif %}
+            <p class="title"> Address : {{ j.address }} </p>
+            <p class="title"> Instruction : {{ j.specialInst }}</p>
+            {% if j.driver_id == Null %}
+				<a href="/assign_driver/?id={{ j.user_id }}"><p> Assign a Driver </p></a>
+			{% else %}
+				<p class="title"> Schedule has been assigned to a driver.</p>
+			{% endif %}
+            <br>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <center>
+      <p style="font-family: 'Dosis', sans-serif; color:black">No Scheduled Pick-ups</p>
+    </center>
+{% endif %}
+</body>
+</html>

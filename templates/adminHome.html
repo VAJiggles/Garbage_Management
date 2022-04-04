@@ -1,0 +1,47 @@
+<html>
+<head>
+	<style type="text/css">
+	html{
+		overflow-y: hidden;
+		margin: 0;
+	}
+		#slider{
+			position: absolute;
+			height: 33%;
+			width:0%;
+			background-color: #3C6E71;
+			animation-name: smooth;
+			animation-duration: 1.5s;
+			animation-fill-mode: forwards;
+			animation-timing-function: ease-in-out;
+		}
+		@keyframes smooth{
+			0% {width: 0%;}
+			100% {width: 99%;}
+		}
+		@keyframes vis{
+			0% {opacity: 0;}
+			100%{ opacity: 1; }
+		}
+		h2{
+			opacity: 0;
+			animation-name: vis;
+			animation-fill-mode: forwards;
+			animation-duration: 1s;
+			animation-timing-function: ease-in-out;
+			animation-delay: 1.8s;
+		}
+		body{
+			font-family: Roboto Thin;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+<font face="Roboto Thin">
+<div id="slider"><h2 style="float: left; font-size: 100px; font-family: Roboto Thin; text-align: left; margin-left: 5%;">{{ diction.usercount }}</h2><h2 style="float: right; font-size: 40px; font-family: Roboto Thin; text-align: right; margin-right: 5%;">Users<br>Registered</h2></div>
+<div id="slider" style="top: 33%; background-color: #70AE6E;animation-delay: .5s;"><h2 style="float: left; font-size: 100px; font-family: Roboto Thin; text-align: left; margin-left: 5%;">{{ diction.drivercount }}</h2><h2 style="float: right; font-size: 40px; font-family: Roboto Thin; text-align: right; margin-right: 5%;">Drivers<br>Registered</h2></div>
+<div id="slider" style="top: 66%; background-color: #BEEE62;animation-delay: 1s"><h2 style="float: left; font-size: 100px; font-family: Roboto Thin; text-align: left; margin-left: 5%;">{{ diction.schedulecount }}</h2><h2 style="float: right; font-size: 40px; font-family: Roboto Thin; text-align: right; margin-right: 5%;">Pickups<br>Scheduled</h2></div>
+</font>
+</body>
+<html>

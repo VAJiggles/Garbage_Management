@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+	{% load fontawesome %}
+	<head>
+		<title>TERRA</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/jquery.dropotron.min.js"></script>
+		<script src="/static/js/skel.min.js"></script>
+		<script src="/static/js/skel-layers.min.js"></script>
+		<script src="/static/js/init.js"></script>
+		{% fontawesome_stylesheet %}
+		<link rel="stylesheet" href="/static/css/skel.css" />
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<style>
+			::placeholder 
+			{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+   				color: white;
+    			opacity: 1; /* Firefox */
+			}
+		</style>
+	</head>
+	<script>
+    function myAlert() {
+         var data = "{{ diction.result }}";
+         alert( data );
+    }
+	</script>
+	<body class="homepage">
+
+		<!-- Header Wrapper -->
+		
+			{% if diction.pagevalue == 0 %}
+			<div id="footer">
+				<h6> Please Keep in mind the following Instructions:</h6>
+				<br>
+				<p>Pick-ups takes place between 9am and 12pm </p>
+				<p>For a specific time between 9am and 12 pm, please Specify </p>
+				<p>Drivers will call before arriving</p>
+				<p>Please Segregate your waste</p>
+				<div class="wrapper style2">
+				<section  class="container">
+					<section>
+							<h3>Schedule your Pick up: </h3>
+							<form method="post" action="check_schedule">
+										<input type="checkbox" name="community[]" value="1" style="border:1px solid #ffffff; height: 35px;"/> Commmunity <br>
+										<br>
+										<h6>select days:</h6>
+										<input type="checkbox" name="days[]" value="1" style="border:1px solid #ffffff; height: 35px;"/> Monday
+										<input type="checkbox" name="days[]"  value="2" style="border:1px solid #ffffff; height: 35px;"/> Wednesday
+										<input type="checkbox" name="days[]" value="4" style="border:1px solid #ffffff; height: 35px;"/> Friday <br>
+										<br>
+										<h6>Address is:</h6>
+										{{ diction.address }}
+										<br>
+										<h6>Change Address?</h6>
+										<input type="checkbox" name="addch[]" value="1" style="border:1px solid #ffffff; height: 35px;"/>Yes
+										<br>
+										<input type="text" name="specialinst"  style="border:1px solid #ffffff; height: 35px;" placeholder="Any Special Instruction?" />
+										<br>
+										<button style=" font-size: 0.8em; text-align: center;" class="button alt">Submit</button>
+
+							</form>
+					</section>
+				</section>
+				</div>
+			</div>
+			{% elif diction.pagevalue == 1 %}
+			<div class="wrapper style1">
+				<div class="wrapper style2">
+				<section  class="container">
+					<section>
+							<h6>Change Address: </h6>
+							<form method="post" action="address_change">
+										<input type="text" name="address"  style="border:1px solid #ffffff; height: 35px;" placeholder="{{ diction.userAddress }}" />
+										<br>
+										<button style=" font-size: 0.8em; text-align: center; margin-left: 570px;" class="button alt">Submit</button>
+							</form>
+					</section>
+				</section>
+				</div>
+			</div>
+
+			{% elif diction.pagevalue == 2 %}
+			<div class="wrapper style1">
+				<div class="wrapper style2">
+				<section  class="container">
+					<section>
+							<h6>Change Address: </h6>
+							<form method="post" action="comm_houses">
+										<input type="text" name="address"  style="border:1px solid #ffffff; height: 35px;" placeholder="{{ diction.userAddress }}" />
+										<br>
+										<h6> Number of houses: </h6>
+										<input type="number" name="house"  style="border:1px solid #ffffff; height: 35px;"/>
+										<button style=" font-size: 0.8em; text-align: center; margin-left: 570px;" class="button alt">Submit</button>
+							</form>
+					</section>
+				</section>
+				</div>
+			</div>
+			{% endif %}
+			 {% if diction.value == 1 %}
+        			<script>myAlert();</script>
+    		{% endif %}
+
+	</body>
+</html>

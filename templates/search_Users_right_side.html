@@ -1,0 +1,43 @@
+<html>
+<head>
+{% load static %}
+  <link rel="stylesheet" href="/static/css/mycss.css">
+<style>
+	p{
+		font-family: Roboto Light;
+		font-size: 20px;
+	}
+	h3{
+		font-family: Roboto Light;
+		color : black;
+	}
+	img{
+		height: 15%;
+	}
+</style>
+	{% if diction.result == "search" %}
+	<div class="box">
+		<form action="find_user" method="post">
+			<p style="align-content: center;"> Search for the user using Username: </p>
+          	<input class="searchbar" type="text" name="find" placeholder="Search"  style="margin-top:25px; text-align: center;">
+        </form>
+        <br>
+    </div>
+    {% elif diction.result == "true" %}
+			{% if diction.0.userUname != null %}
+				 <div class="box">
+            		<h3 style="color: black">{{ diction.0.userUname }}</h3>
+            		<p class="title"> Name: {{ diction.0.userName }} </p>
+            		<p class="title"> E-mail: {{ diction.0.userEmail }} </p>
+            		<p class="title">Contact Number: {{ diction.0.userPhno }}</p>
+            		<br>
+       			 </div>
+			{% endif %}
+	{% elif diction.result == "false" %}
+		<div class= "box">
+			<h3> No User Found. </h3>
+		</div>
+	{% endif %}
+	<br>
+</head>
+</html>

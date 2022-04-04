@@ -1,0 +1,46 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/static/css/mycss.css">
+<style>
+	p{
+		font-family: Roboto Light;
+		font-size: 20px;
+	}
+	h3{
+		font-family: Roboto Light;
+
+	}
+	img{
+		height: 15%;
+	}
+</style>
+<centre>
+	{% if diction.result == "search" %}
+	<div class="box">
+		<form action="find_driver" method="post">
+			<p> Search for the driver using Username </p>
+          	<input class="searchbar" type="text" name="find" placeholder="Search"  style="margin-top:25px">
+        </form>
+        <br>
+    </div>
+    {% elif diction.result == "true" %}
+		{% for i,j in diction.items %}
+			{% if j.userUname != null %}
+				 <div class="box">
+            		<h3 style="color: black">{{ j.userUname }}</h3>
+            		<p class="title"> Name: {{ j.userName }} </p>
+            		<p class="title"> E-mail: {{ j.userEmail }} </p>
+            		<br>
+       			 </div>
+			{% endif %}
+		{% endfor %}
+	{% elif diction.result == "false" %}
+		<div class= "box">
+			<h3> No Driver Found. </h3>
+		</div>
+	{% endif %}
+		<br>
+</center>
+
+</head>
+</html>

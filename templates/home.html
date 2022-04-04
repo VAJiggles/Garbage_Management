@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html>
+{% load fontawesome %}
+	<head>
+		<title>TERRA</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/jquery.dropotron.min.js"></script>
+		<script src="/static/js/skel.min.js"></script>
+		<script src="/static/js/skel-layers.min.js"></script>
+		<script src="/static/js/init.js"></script>
+		{% fontawesome_stylesheet %}
+		<link rel="stylesheet" href="/static/css/skel.css" />
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="homepage">
+	<script>
+    function myAlert() {
+         var data = "{{ diction.result }}";
+         alert( data );
+    }
+	</script>
+	{% if diction.value == 1 %}
+        	<script>myAlert();</script>
+    {% endif %}
+
+
+		<!-- Header Wrapper -->
+			<div class="wrapper style1">
+			
+			<!-- Header -->
+				<div id="header">
+					<div class="container">
+							
+						<!-- Logo -->
+							<h1><a href="home" id="logo">TERRA</a></h1>
+						
+						<!-- Nav -->
+							<nav id="nav">
+                                <ul>
+                                    <li class="active"><a href="home">Home</a></li>
+                                    <li>
+                                        <a href="#">User</a>
+                                        <ul>
+                                            <li><a href="signup_user">Sign-Up</a></li>
+                                            <li><a href="login_user">Login</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Driver</a>
+                                        <ul>
+                                            <li><a href="signup_driver">Sign-Up</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Admin</a>
+                                        <ul>
+                                            <li><a href="adlog">Login</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+	
+					</div>
+				</div>
+				
+			<!-- Banner -->
+				<div id="banner">
+					<section class="container">
+						<h2 style="margin-top: 200px;">TERRA</h2>
+						<span>THERE IS NO PLANET B</span>
+					</section>
+				</div>
+
+			</div>
+		
+		<!-- Section One -->
+			<div class="wrapper style3">
+				<section class="container">
+					<header class="major">
+						<h2>About us</h2>
+					</header>
+					<p>Terra is a simple waste disposal solution that connects the public with the authorities. It is a platform to promote the idea of proper waste disposal.</p>
+				</section>			
+			</div>
+
+		<!-- Section Two -->
+			<div class="wrapper style2">
+				<section class="container">
+					<div class="row double">
+						<div class="6u">
+							<header class="major">
+								<h2>THE TERRA APP</h2>
+								<span class="byline">The Terra Application, currently only for Android Phones, will be available to all users and provide a feature for users to upload photographs for immediate pick-ups.</span>
+							</header>
+						</div>
+						<div class="6u">
+							<a href="#" class="image" style="width: 69%;"><img src="/static/img/picture.png" style="height : 400px; margin-left: 200px" alt=""></a>
+						</div>
+					</div>
+				</section>
+			</div>
+
+		<!-- Section Three -->
+			<div class="wrapper style4">
+				<section class="container">
+					<header class="major">
+						<h2>Features Offered</h2>
+						<span class="byline">TERRA offers the following features for users:</span>
+					</header>
+					<div class="row flush">
+						<div class="4u">
+							<ul class="special-icons">
+								<li>
+									<span class="fa fa-camera"></span>
+									<h3>PHOTOGRAPH</h3>
+									<p>The Registered and Un-Registered users can upload a photo of a pile of collected garbage.</p>
+								</li>
+								<li>
+									<span class="fa fa-user"></span>
+									<h3>USERS</h3>
+									<p>Registered and Un-Registered Users will be able to use the system.</p>
+								</li>
+							</ul>
+						</div>
+						<div class="4u">
+							<ul class="special-icons">
+								<li>
+									<span class="fa fa-wrench"></span>
+									<h3>AREA ADMIN</h3>
+									<p>There will different administrators assigned to each different locality.</p>
+								</li>
+								<li>
+									<span class="fa fa-clock"></span>
+									<h3>SCHEDULING</h3>
+									<p>Registered users can use the application or website to schedule pick-ups periodically.</p>
+								</li>
+							</ul>
+						</div>
+						<div class="4u">
+							<ul class="special-icons">
+								<li>
+									<span class="fa fa-truck"></span>
+									<h3>DRIVERS</h3>
+									<p>Drivers will be assigned pick-up duties for both scheduled and unregisterd users.</p>
+								</li>
+								<li>
+									<span class="fa fa-mobile"></span>
+									<h3>MOBILE APPLICATION</h3>
+									<p>The android application will be available to drivers and users to use the features offered by TERRA</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</div>
+		
+		<!-- Team -->
+			<div class="wrapper style5">
+				<section id="team" class="container">
+					<header class="major">
+						<h2>Developed by</h2>
+						<span class="byline"></span>
+					</header>
+					<div class="row" style="margin-left: 17%; ">
+						<div class="3u" style="width: 36%;">
+							<a href="#" class="image" style="width: 69%;"><img src="/static/img/2.jpg" style="height : 200px; " alt=""></a>
+							<h3>Deeraj Ramchandani</h3>
+							<p>Mobile Application</p>
+						</div>
+						
+						<div class="3u" style="padding-left: 96px; width: 36%;">
+							<a href="#" class="image" style="width: 90%;"><img src="/static/img/4.jpg" style="height : 200px" alt=""></a>
+							<h3>Varun Ajmera</h3>
+							<p>Website</p>
+						</div>
+					</div>
+				</section>
+			</div>
+	<!-- Footer -->
+		<div id="footer">
+			<section class="container">
+				<header class="major">
+					<h2>Connect With us</h2>
+					<span class="byline"></span>
+				</header>
+				<ul class="icons">
+					<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
+					<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
+					<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
+					<li><a href="#" class="fa fa-google-plus"><span>Google+</span></a></li>
+				</ul>
+				<hr />
+			</section>	
+		</div>
+
+	</body>
+</html>

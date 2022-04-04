@@ -1,0 +1,20 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/static/css/mycss.css">
+<body style="background-color: #e8e8e8;">
+{% if diction.userUname != null %}
+  <div class="box">
+    <img src={{ diction.userProfilePicture.url }}></img>
+    <h3 style="color: black">{{ diction.userUname }}</h3>
+    <p class="title"> Name: {{ diction.userName }} </p>
+    <p class="title"> E-mail: {{ diction.userEmail }} </p>
+    <p class="title">Contact Number: {{ diction.userPhno }}</p>
+    <p class="title">Address: {{ diction.userAddress }}</p>
+    <p class="title">Date of Birth: {{ diction.userDay }} / {{ diction.userMonth }} / {{ diction.userYear }}</p>
+    <br>
+    <br>
+  </div>
+{% endif %}
+</head>
+</body>
+</html>

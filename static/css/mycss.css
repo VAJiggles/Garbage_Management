@@ -1,0 +1,160 @@
+@import 'https://fonts.googleapis.com/css?family=Dosis';
+
+/*Login Page Begins*/
+.login
+ {
+  text-align: center;
+  width: 20%;
+  margin-top: 100px;
+  margin-left: 600px;
+  box-shadow: inset 10 0 10px #888;
+}
+.bottom-border 
+{
+  border-bottom:1px solid #ccc;
+  border-color:#f1f1f1!important;
+  padding-top:12px;
+  padding-bottom:12px;
+  padding-left:12px;
+}
+.textfield
+{
+  padding-top:10px;
+  padding-bottom:12px;
+  padding-left:12px;
+  padding-right:12px;
+  display:block;
+  border:none;
+  border-bottom:1px solid #2f2f2d;
+  font-family: 'Dosis', sans-serif;
+  font-size: 17px;
+  background:#f1f1f1;
+  margin:8px;
+  width:98%;
+}
+.btn
+{
+  border:none;
+  display:inline-block;
+  outline:0;
+  padding:12px;
+  vertical-align:middle;
+  overflow:hidden;
+  text-decoration:none!important;
+  border-bottom:1px solid #00bacf;
+  color: #00bacf;
+  background-color: #f0f0f5;
+  text-align:center;
+  cursor:pointer;
+  white-space:nowrap;
+  margin: 8px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 15px;
+}
+.btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn2
+{
+  border:none;
+  display:inline-block;
+  outline:0;
+  padding:12px;
+  vertical-align:middle;
+  overflow:hidden;
+  text-decoration:none!important;
+  border-bottom:1px solid #00bacf;
+  color: #00bacf;
+  background-color: white;
+  text-align:center;
+  cursor:pointer;
+  white-space:nowrap;
+  margin: 8px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 15px;
+}
+.btn2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+/*Login Page Ends*/
+/*Admin Page Sidebar*/
+.sidenav {
+    width: 230px;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    background: #f2f2f2;
+    overflow-x: hidden;
+    padding: 8px 0;
+    height: 100%;
+    margin-left: 10px;
+    margin-top: 200px;
+}
+.main {
+    margin-left: 140px; 
+    font-size: 28px;
+    padding: 0px 10px;
+}
+
+.sidenav a{
+  text-decoration: none;
+  color: #2f2f2d;
+  display: block;
+  font-family: "Dosis", sans-serif;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 30px;
+}
+
+.sidenav a:hover{
+  color: #00bacf;
+}
+/* Admin Page Sidebar ends */
+/* Driver Sign-Up Page Begins */
+.signup
+ {
+  text-align: left;
+  width: 20%;
+  margin-top: 25px;
+  margin-left: 600px;
+  box-shadow: inset 10 0 10px #888;
+}
+/* Sign-Up Ends */
+
+/* See All Users/Driver */
+
+.box
+{
+  top: 100px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 360px;
+  margin-top: 15px;
+  padding-top: 3%;
+  margin-bottom: 15px;
+  margin-left: 35%;
+  text-align: center;
+  font-family: Roboto Thin;
+}
+.title
+{
+  color: black;
+  font-size: 18px;
+  font-family: Roboto Thin;
+}
+
+/* Search for user */
+
+.searchbar
+{
+    width: 55%;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    text-align: center;
+    background-color: #f2f2f2;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    font-family: Roboto Thin;
+}

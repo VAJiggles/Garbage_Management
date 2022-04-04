@@ -1,0 +1,45 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/static/css/mycss.css">
+</head>
+ <script>
+    function myAlert() {
+         var data = "{{ diction.done }}";
+         alert( data );
+    }
+</script>
+{% if diction.value == 1 %}
+         <script>myAlert();</script>>
+{% endif %}
+<body style="background-color: #e8e8e8;">
+
+{% if diction.result == "true" %}
+    {% for i,j in diction.items %}
+    	{% if j.geotag != None %}
+          <div class="box">
+          	<center><b><p class="title" style="font-size:25px;"> Image Details </b></p></center>
+            <img src="{{ j.garbagePicture.url }}" height="15%">
+            <p class="title"> GEO-TAG: {{ j.geotag }} </p>
+            <p class="title"> Date: {{ j.date }} </p>
+            <p class="title"> Time: {{ j.time }}</p>
+            {% if j.driver_id == Null %}
+				<a href="/garbage_assign/?id={{ j.id }}"><p> Assign a Driver </p></a>
+			{% elif j.garbagePictureVerification == "" %}
+				<p class="title"> <b> Driver has been assigned but garbage has not been picked up </b></p>
+				<br>
+			{% else %}
+				<p class="title"> <b> Garbage has been picked up. </b></p>
+				<img src="{{ j.garbagePictureVerification.url }}" height="15%">
+				<br>
+			{% endif %}
+            <br>
+        </div>
+        {% endif %}
+    {% endfor %}
+  {% else %}
+    <center>
+      <p style="font-family: 'Dosis', sans-serif; color:black">No garbage</p>
+    </center>
+{% endif %}
+</body>
+</html>

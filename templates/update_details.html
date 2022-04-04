@@ -1,0 +1,29 @@
+<html>
+<head>
+	 <link rel="stylesheet" href="/static/css/mycss.css">
+<script>
+    function myAlert() {
+         var data = "{{ diction.result }}";
+         alert( data );
+    }
+</script>
+<center>
+{% if diction.value == 0 %}
+  <script>myAlert()</script>
+{% endif %}
+
+{% if diction.userName != "" %}
+	<h3 class="bottom-border">Update your details </h3><br>
+      <form action="func_update_details" method="post">
+        <input class="textfield" value="{{ diction.userEmail }}" name="email">
+        <input class="textfield" value="{{ diction.userUname }}" name="uname">
+        <input class="textfield" value="{{ diction.userName }}" name="name">
+        <input class="textfield" value="{{ diction.userAddress }}" name="address">
+        <input class="textfield" value="{{ diction.userPhno }}" name="phno">
+        <button class="btn2" type="submit">Submit</button>
+        <br>
+      </form>
+{% endif %}
+</center>
+</head>
+</html>

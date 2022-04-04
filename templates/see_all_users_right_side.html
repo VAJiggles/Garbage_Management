@@ -1,0 +1,149 @@
+
+<html>
+<head>
+  <link rel="stylesheet" href="/static/css/mycss.css">
+</head>
+<!-- <style>
+#areas{
+  width:150px;
+}
+
+</style> -->
+  {% load static %}
+<script>
+    function myAlert() {
+         var data = "{{ diction.done }}";
+         alert( data );
+    }
+</script>
+{% if diction.value == 1 %}
+         <script>myAlert();</script>
+{% endif %}
+<body style="background-color: #e8e8e8;">
+{% if diction.pagevalue == 0 %}
+  {% if diction.result == "true" %}
+    {% for j in diction.users %}
+      {% if j.userUname != null %}
+          <div class="box">
+            <img src="{{ j.userProfilePicture.url }}" height="15%">
+            <p class="title"> E-mail: {{ j.userEmail }} </p>
+            <p class="title"> Username: {{ j.userUname }} </p>
+            <p class="title">Contact Number: {{ j.userPhno }}</p>
+            <br>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <center>
+      <p style="font-family: 'Dosis', sans-serif; color:black">No users available</p>
+    </center>
+  {% endif %}
+{% endif %}
+{% if diction.pagevalue == 1 %}
+ {% if diction.result == "true" %}
+    {% for j in diction.user%}
+      {% if j.driver_id.userName != null%}
+          <div class="box">
+            <img src="{{ j.driver_id.userProfilePicture.url }}" height="15%">
+            <p class="title"> E-mail: {{ j.driver_id.userEmail }} </p>
+            <p class="title"> Username: {{ j.driver_id.userUname }} </p>
+            <p class="title">Contact Number: {{ j.driver_id.userPhno }}</p>
+            <p class="title">License Number: {{ j.driverLino }}</p>
+            <p class="title">Vehicle Number: {{ j.driverVeno }}</p>
+            <p class="title">License Expiration Date: {{ j.driverDayLIC }} / {{ j.driverMonthLIC }} / {{ j.driverYearLIC }}</p>
+            <img src="{{ j.driverLicPicture.url }}" height="15%">
+            {% if j.driverArea != "Null" %}
+            <p class="title">Assigned Area : {{ j.driverArea }}</p>
+            {% endif %}
+            {% if j.approved == None or j.approved == False %}
+            <a href="/approved_driver/?id={{ j.driver_id.id }}"><p> Approve Driver </p></a>
+            {% elif j.approved == True and j.driverArea == "Null" %}
+            <a href="/assign_area/?id={{ j.driver_id.id }}"><p>Assign an Area</p></a>
+            {% elif j.approved == True %}
+            <a href="/disapproved_driver/?id={{ j.driver_id.id }}"><p> Disapprove Driver </p></a>
+            {% endif %}
+            <br>
+          </div>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <center>
+      <p style="font-family: 'Dosis', sans-serif;color:black">No users available</p>
+    </center>
+  {% endif %}
+{% endif %}
+{% if diction.pagevalue == 2 %}
+        <div class="box">        
+            <p class="title">License Number: {{ diction.driverLino }}</p>
+            <p class="title">Vehicle Number: {{ diction.driverVeno }}</p>
+            <p class="title">License Expiration Date: {{ diction.driverDayLIC }} / {{ diction.driverMonthLIC }} / {{ diction.driverYearLIC }}</p>
+            <p class="title">Assign an Area:</p>
+            <form action="/area_assigned/?id={{ diction.driver_id_id }}" method="post">
+               <select id="areas" name="areas">
+                <option value="Koramangala">Koramangala</option>
+                <option value="S.G. Palya">S.G. Palya</option>
+               </select>
+              <input type="submit">
+            </form>
+            <br>
+      </div>
+{% endif %}
+{% if diction.pagevalue == 3 %}
+ {% if diction.result == "true" %}
+    <h1 style="font-family: 'Dosis', sans-serif; "> Approved Drivers: </h1>
+    {% for i,j in diction.items %}
+      {% if j.approved == True and j.userName != null %}
+          <div class="box">
+            <img src="{{ j.userProfilePicture }}">
+            <p class="title"> E-mail: {{ j.userEmail }} </p>
+            <p class="title"> Username: {{ j.userUname }} </p>
+            <p class="title">Contact Number: {{ j.userPhno }}</p>
+            <p class="title">License Number: {{ j.driverLino }}</p>
+            <p class="title">Vehicle Number: {{ j.driverVeno }}</p>
+            <p class="title">License Expiration Date: {{ j.driverDayLIC }} / {{ j.driverMonthLIC }} / {{ j.driverYearLIC }}</p>
+            {% if j.driverArea != "Null" %}
+            <p class="title">Assigned Area : {{ j.driverArea }}</p>
+            <a href="/driver_assigned/?id={{ diction.user_id }}&driverid={{ j.id }}"><p>Assign Schedule</p></a>
+            {% endif %}
+            <br>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <center>
+      <p style="font-family: 'Dosis', sans-serif;color:black">No users available</p>
+    </center>
+  {% endif %}
+{% endif %}
+
+{% if diction.pagevalue == 4 %}
+ {% if diction.result == "true" %}
+    <h1 style="font-family: 'Dosis', sans-serif; "> Approved Drivers: </h1>
+    {% for i,j in diction.items %}
+      {% if j.approved == True and j.userName != null %}
+          <div class="box">
+            <img src="{{ j.userProfilePicture.url }}">
+            <p class="title"> E-mail: {{ j.userEmail }} </p>
+            <p class="title"> Username: {{ j.userUname }} </p>
+            <p class="title">Contact Number: {{ j.userPhno }}</p>
+            <p class="title">License Number: {{ j.driverLino }}</p>
+            <p class="title">Vehicle Number: {{ j.driverVeno }}</p>
+            <p class="title">License Expiration Date: {{ j.driverDayLIC }} / {{ j.driverMonthLIC }} / {{ j.driverYearLIC }}</p>
+            {% if j.driverArea != "Null" %}
+            <p class="title">Assigned Area : {{ j.driverArea }}</p>
+            <a href="/gdriverAssigned/?gid={{ diction.gid }}&driverid={{ j.id }}"><p>Assign Schedule</p></a>
+            {% endif %}
+            <br>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <center>
+      <p style="font-family: 'Dosis', sans-serif;color:black">No users available</p>
+    </center>
+  {% endif %}
+{% endif %}
+    <br>
+    <br>
+  </body>
+</html>
